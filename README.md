@@ -1,4 +1,4 @@
-# Delete Tweets, Retweets, and Likes
+# Delete Tweets, Retweets, and Likes [Work 1/June/2024]
 
 This project provides JavaScript snippets to delete tweets, retweets, and likes from your Twitter profile efficiently.
 
