@@ -1,9 +1,15 @@
-function sleep(ms) {
-return new Promise(resolve => setTimeout(resolve, ms));
-}
-for(var i = 1; i < 500; i++){
-document.querySelectorAll('[data-testid="unretweet"]')[0].click()
-await sleep(1000)
-document.querySelectorAll('[data-testid="unretweetConfirm"]')[0].click()
-await sleep(1000)
-}
+(function () {
+  var delRetweets = function () {
+    console.log("Deleting retweets...");
+    window.scrollBy(0, 10000);
+    document.querySelectorAll('[data-testid="unretweet"]').forEach(function (v, _, _) {
+      v.click();
+      document.querySelectorAll('[data-testid="unretweetConfirm"]').forEach(function (v2, _, _) {
+        v2.click();
+      });
+    });
+    setTimeout(delRetweets, 1000);
+  };
+
+  delRetweets();
+})();
